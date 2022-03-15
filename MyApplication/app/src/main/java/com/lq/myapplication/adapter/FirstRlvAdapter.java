@@ -1,6 +1,7 @@
 package com.lq.myapplication.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.lq.myapplication.R;
+import com.lq.myapplication.activity.WebViewActivity;
 import com.lq.myapplication.bean.FirstHotBean;
 import com.lq.myapplication.utils.LogUtils;
 
@@ -44,7 +46,9 @@ public class FirstRlvAdapter extends RecyclerView.Adapter {
         holder1.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(mContext, WebViewActivity.class);
+                intent.putExtra("url", datasDTO.getLink());
+                mContext.startActivity(intent);
             }
         });
     }
