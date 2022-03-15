@@ -59,9 +59,8 @@ public class FirstFragment extends Fragment {
 
                     @Override
                     public void onNext(FirstHotBean firstHotBean) {
-                     LogUtils.e(""+firstHotBean.getData().get(1).toString());
-                     firstRlvAdapter.addData(firstHotBean);
-
+                        //wanAndroid的首页文章json解析不出来，暂时用热词来代替
+                        firstRlvAdapter.addData(firstHotBean);
                     }
 
                     @Override
