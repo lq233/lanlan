@@ -4,6 +4,7 @@ package com.lq.myapplication.http;
 import com.lq.myapplication.bean.BannerBean;
 import com.lq.myapplication.bean.FirstHotBean;
 import com.lq.myapplication.bean.FirstRlvBan;
+import com.lq.myapplication.bean.WenDaBean;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -22,6 +23,9 @@ public interface ApiServices {
     //首页置顶文章
     @GET("article/top/json")
     Observable<FirstHotBean> getHot();
+
+    @GET()
+    Observable<WenDaBean.DataDTO> getWenDa(@Url String page);
 
 
 }
